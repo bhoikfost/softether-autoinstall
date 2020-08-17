@@ -109,6 +109,7 @@ do
         apt install squid -y
         Proxy_Port='7835'
         echo -e "acl VPN dst $(wget -4qO- http://ipinfo.io/ip)/32\nhttp_access allow VPN\nhttp_access deny all\nhttp_port 0.0.0.0:$Proxy_Port\nacl all src 0.0.0.0/0.0.0.0\nno_cache deny all\ndns_nameservers 1.1.1.1 1.0.0.1\nvisible_hostname localhost" > /etc/squid/squid.conf
+        printf "\nRestarting Squid Please wait....\n\n"
         systemctl restart squid
         printf "\nSquid Installed.\n\n"
         printf "\nEdited to be used only for the Getfoxie VPN services.\n\n"
