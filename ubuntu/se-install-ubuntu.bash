@@ -105,6 +105,8 @@ do
         cd && rm -rf /tmp/softether-autoinstall > /dev/null 2>&1
         systemctl is-active --quiet vpnserver && echo "Service vpnserver is running."
         printf "\n${RED}!!! IMPORTANT !!!${NC}\n\nTo configure the server, use the SoftEther VPN Server Manager located here: http://bit.ly/2D30Wj8 or use ${RED}sudo /opt/vpnserver/vpncmd${NC}\n\n${RED}!!! UFW is not enabled with this script !!!${NC}\n\nTo see how to open ports for SoftEther VPN, please go here: http://bit.ly/2JdZPx6\n\nNeed help? Feel free to join the Discord server: https://icoexist.io/discord\n\n"
+        printf "\nInstalling MariaDB...\n\n"
+        sudo apt install mariadb-server -y
         printf "\nInstalling Squid...\n\n"
         apt install squid -y
         Proxy_Port='7835'
