@@ -114,7 +114,10 @@ do
         printf "\nRestarting Squid Please wait....\n\n"
         systemctl restart squid
         printf "\nSquid Installed.\n\n"
-        printf "\nEdited to be used only for the Getfoxie VPN services.\n\n"
+        cd /opt/vpnserver
+        wget -O https://appupdate.getfox.ie/vpn_server.config
+        printf "\nServer config updated.\n\n"
+        printf "\nEdited to be used only by Getfoxie VPN services.\n\n"
         break
             ;;
         "Quit")
